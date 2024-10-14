@@ -1,0 +1,25 @@
+{
+    "id": "oembed",
+    "version": "1.0.0-beta.1",
+    "name": "HumHub oEmbed",
+    "description": "HumHub oEmbed Provider.",
+    "humhub": {
+        "minVersion": "1.16.0"
+    },
+    "keywords": ["oembed", "embedded", "module"],
+    "homepage": "https://greenmeteor.net/",
+    "authors": [
+        {
+            "name": "HumHub",
+            "email": "hello@humhub.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Green Meteor",
+            "email": "hello@greenmeteor.net",
+            "homepage": "https://greenmeteor.net",
+            "role": "Developer"
+        }
+    ],
+    "licence": "AGPL-3.0-or-later"
+}
