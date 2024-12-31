@@ -13,16 +13,15 @@ return [
         [
             'class' => ModuleManager::class,
             'event' => ModuleManager::EVENT_AFTER_MODULE_ENABLE,
-            'callback' => [Module::class, 'onAfterModuleEnable']
+            'callback' => [Module::class, 'onAfterModuleEnable'],
         ],
         [
             'class' => UrlOembed::class,
             'event' => UrlOembed::EVENT_FETCH,
-            'callback' => function ($event) {
-                $pattern = '/https?:\/\/' . str_replace('.', '\.', Yii::$app->request->hostInfo) . '\/content\/perma\/.+/';
-                $endpoint = Url::to(['/oembed/endpoint', 'url' => '%url%', 'maxwidth' => '%width%', 'maxheight' => '%height%'], true);
-                $event->providers[$pattern] = $endpoint;
-            },
+            'callback' => [Module::class, 'onUrlOembedFetch'],
         ],
+    ],
+    'urlManagerRules' => [
+        'oembed' => 'oembed/default/oembed',
     ],
 ];
